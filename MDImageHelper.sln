@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31424.327
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MDImageHelper", "MDImageHelper\MDImageHelper.csproj", "{2952AE0F-EFAB-4810-8396-4AD6AE2C810F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MDImageHelper.Test", "MDImageHelper.Test\MDImageHelper.Test.csproj", "{9BA6A3F6-54E7-4E3A-816C-A6A62EE2BFD4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2952AE0F-EFAB-4810-8396-4AD6AE2C810F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2952AE0F-EFAB-4810-8396-4AD6AE2C810F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2952AE0F-EFAB-4810-8396-4AD6AE2C810F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2952AE0F-EFAB-4810-8396-4AD6AE2C810F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9BA6A3F6-54E7-4E3A-816C-A6A62EE2BFD4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9BA6A3F6-54E7-4E3A-816C-A6A62EE2BFD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9BA6A3F6-54E7-4E3A-816C-A6A62EE2BFD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9BA6A3F6-54E7-4E3A-816C-A6A62EE2BFD4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5FF3B20C-BADB-41EB-B65B-CF909B35D40E}
+	EndGlobalSection
+EndGlobal
