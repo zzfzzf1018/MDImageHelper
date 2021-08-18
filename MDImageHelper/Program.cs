@@ -12,7 +12,7 @@ namespace MDImageHelper
                    .WithParsed(o =>
                    {
                        var core = new Core();
-                       core.Handle(o);
+                       Core.Process(o);
                    });
         }
     }

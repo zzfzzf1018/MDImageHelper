@@ -7,10 +7,9 @@ namespace MDImageHelper.Test
     public class CoreTest
     {
         [TestMethod]
-        public void TestHandle()
+        public void TestProcess()
         {
-            Core core = new();
-            core.Handle(new CliOptions
+            Core.Process(new CliOptions
             {
                 MDPath = @"C:\zzf_dev\aaa",
                 ImageFolder = "",
