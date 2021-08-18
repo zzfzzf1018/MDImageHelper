@@ -51,8 +51,24 @@ namespace MDImageHelper.Internal
 
         public void ReplaceRemoteImages()
         {
-            string content = Read();
+            var content = Read();
 
+            var mappingRemoteLocal = Download(content);
+
+            if (mappingRemoteLocal.Count > 0)
+                UpdateToFile(content, mappingRemoteLocal);
+        }
+
+        private string Read()
+        {
+            using FileStream fileStream = File.Open(MDPath, FileMode.Open);
+            using StreamReader streamReader = new(fileStream);
+            string content = streamReader.ReadToEnd();
+            return content;
+        }
+
+        private NameValueCollection Download(string content)
+        {
             MatchCollection imgMatchCollection = Regex.Matches(content, IMG_TAG_REGEX);
             NameValueCollection mappingRemoteLocal = new();
             foreach (Match imgMatch in imgMatchCollection)
@@ -76,15 +92,7 @@ namespace MDImageHelper.Internal
                 mappingRemoteLocal[imageUrl] = loalImagePath;
             }
 
-            UpdateToFile(content, mappingRemoteLocal);
-        }
-
-        private string Read()
-        {
-            using FileStream fileStream = File.Open(MDPath, FileMode.Open);
-            using StreamReader streamReader = new(fileStream);
-            string content = streamReader.ReadToEnd();
-            return content;
+            return mappingRemoteLocal;
         }
 
         private bool DownloadRemoteImage(string imageUrl, out string loadImagePath)
@@ -94,7 +102,7 @@ namespace MDImageHelper.Internal
             {
                 byte[] resBytes = HttpClient.GetByteArrayAsync(imageUrl).GetAwaiter().GetResult();
                 string ext = Path.GetExtension(imageUrl);
-                string newImagename = string.Format($"{DateTime.Now:yyyy_MM_dd_hh_mm_ss}{(string.IsNullOrWhiteSpace(ext) ? ".png" : ext)}");
+                string newImagename = string.Format($"{DateTime.Now:yyyy_MM_dd_hh_mm_ss_fff}{(string.IsNullOrWhiteSpace(ext) ? ".png" : ext)}");
                 string absoluteDownloadFolder;
                 if (!IsRelativeDownloadImageFolder)
                 {
