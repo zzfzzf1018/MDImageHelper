@@ -9,12 +9,12 @@ namespace MDImageHelper.Test
         [TestMethod]
         public void TestProcess()
         {
-            Core.Process(new CliOptions
-            {
-                MDPath = @"C:\zzf_dev\aaa",
-                ImageFolder = "",
-                Overwrite = false
-            });
+            //Core.Process(new CliOptions
+            //{
+            //    MDPath = @"C:\zzf_dev\aaa",
+            //    ImageFolder = "",
+            //    Overwrite = false
+            //});
         }
     }
 }
